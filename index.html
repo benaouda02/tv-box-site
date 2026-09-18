@@ -1,292 +1,351 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Google Tv  محمد إسلام </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Tv محمد إسلام</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <!-- Tailwind CSS (for structure and utilities) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-body{
-    font-family: 'Cairo', sans-serif;
-    background: url('https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-    min-height:100vh;
-    position:relative;
-    color:white;
-}
-
-body::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.75);
-    backdrop-filter: blur(6px);
-    z-index:0;
-}
-
-.wrapper{
-    position:relative;
-    z-index:2;
-    padding:40px 20px;
-    max-width:800px;
-    margin:auto;
-}
-
-.header{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.header h1{
-    font-size:42px;
-    font-weight:700;
-}
-
-.header span{
-    color:#00ff88;
-    text-shadow:0 0 15px #00ff88;
-}
-
-.sub{
-    margin-top:10px;
-    font-size:22px;
-    color:#ccc;
-}
-
-.card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(0,255,136,0.2);
-    backdrop-filter: blur(10px);
-    border-radius:20px;
-    padding:25px;
-    margin-bottom:25px;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 25px rgba(0,255,136,0.4);
-    border:1px solid #00ff88;
-}
-
-.icon{
-    width:80px;
-    height:80px;
-    border-radius:18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:35px;
-    background:linear-gradient(145deg,#00ff88,#009955);
-    box-shadow:0 0 20px rgba(0,255,136,0.6);
-}
-
-.content{
-    flex:1;
-}
-
-.content h2{
-    font-size:24px;
-    margin-bottom:5px;
-}
-
-.content p{
-    color:#bbb;
-    margin-bottom:10px;
-}
-
-.btn{
-    display:inline-block;
-    padding:10px 25px;
-    border-radius:10px;
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-    background:linear-gradient(90deg,#00ff88,#00cc66);
-    transition:0.3s;
-    box-shadow:0 0 15px rgba(0,255,136,0.6);
-    cursor:pointer;
-}
-
-.btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 25px rgba(0,255,136,1);
-}
-
-.counter{
-    margin-top:8px;
-    font-size:14px;
-    color:#00ff88;
-    text-shadow:0 0 8px rgba(0,255,136,0.7);
-}
-
-@media(max-width:600px){
-    .card{
-        flex-direction:column;
-        text-align:center;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="wrapper">
-
-    <div class="header">
-        <h1>محمد <span>إسلام</span>Google Tv </h1>
-        <div class="sub">تطبيقات Google tv Android tv </div>
-    </div>
-
-    <!-- IPTV -->
-    <div class="card">
-    <div class="icon">
-        <img src="https://www.journaldugeek.com/resize/w112/O7ojly410dVNKUzG491uuSzQCyPRRqm99RsCuq2F.png" alt="IPTV Icon" width="80" height="80">
-    </div>
-    <div class="content">
-        <h2>Yacine TV</h2>
-        <p>أفضل تطبيق لمشاهدة القنوات بجودة عالية</p>
-        
-        <a href="https://www.mediafire.com/file/ledsvueu7zxrame/com.ytv.player_14.0.xapk/file" class="btn" onclick="increaseDownload('iptv')" target="_blank">
-            تحميل 
-        </a>
-        
-        <div class="counter">
-            عدد التحميلات: <span id="iptv-count">0</span>
-        </div>
-    </div>
-</div>
-
-    <!-- Movies -->
-    <div class="card">
-        <div class="icon"><img src="https://iili.io/qKaJiJV.jpg" alt="Movies Icon" width="80" height="80"></div>
-        <div class="content">
-            <h2>YTV Pro</h2>
-            <p>مشغل تطبيق ياسين tv </p>
-            <a href="https://www.mediafire.com/file/ks1fuwgci0n4rnk/مشغل+YTV.apk/file" class="btn" onclick="increaseDownload('iptv')" target="_blank">
-            تحميل 
-        </a>
-        
-        <div class="counter">
-            عدد التحميلات: <span id="iptv-count">0</span>
-        </div>
-    </div>
-</div>
-
-    <!-- Browser -->
-    <div class="card">
-        <div class="icon"><img src="https://i.ibb.co/xS2jH68y/genral-tv-icon.png" alt="Movies Icon" width="80" height="80"></div>
-        <div class="content">
-            <h2>General tv pro </h2>
-            <p>كود التفعيل 000  </p>
-            <a href="https://gofile.io/d/XJydW8" class="btn" onclick="increaseDownload('iptv')" target="_blank">
-            تحميل 
-        </a>
-        
-        <div class="counter">
-            عدد التحميلات: <span id="iptv-count">0</span>
-        </div>
-    </div>
-</div>
-
-    <!-- Movies -->
-    <div class="card">
-        <div class="icon"><img src="https://i.ibb.co/N6Dfnkmc/Screenshot-2026-02-23-144017.png" alt="Movies Icon" width="80" height="80"></div>
-        <div class="content">
-            <h2>PrimeTv V1.4.0 </h2>
-            <p>كود التفعيل 2026  </p>
-            <a href="https://www.mediafire.com/file/wtpzbx8wta6zn3z/PrimeTV+v1.4.0.apk/file" class="btn" onclick="increaseDownload('iptv')" target="_blank">
-            تحميل 
-        </a>
-        
-        <div class="counter">
-            عدد التحميلات: <span id="iptv-count">0</span>
-        </div>
-    </div>
-</div>
-    <div class="card">
-        <div class="icon"><img src="https://cricfy.net/wp-content/uploads/crcify-tv-pc-apk.webp" alt="Movies Icon" width="80" height="80"></div>
-        <div class="content">
-            <h2>Cricfy TV V6.1 </h2>
-            <p> بدون كود تقعيل </p>
-            <a href="https://www.mediafire.com/file/sjkb8d4j3mgegyt/CRICFy_v6.1_2.apk/file" class="btn" onclick="increaseDownload('iptv')" target="_blank">
-            تحميل 
-        </a>
-        
-        <div class="counter">
-            عدد التحميلات: <span id="iptv-count">0</span>
-        </div>
-    </div>
-</div>
-    <!-- Movies -->
-    <div class="card">
-        <div class="icon"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEgurg7NMQpkYfWSFdmeve4T-pWEd35DqAFmp80BZVG61AkQGsq4Lv4R0X3BuT3BW9TlBiWq_HK1h7OokXgOVB2vrftC4rYo8K7TBwmrDfN5Ti_nxuoyXA8gJ16HEspvaePdrrZlFgKlJW3d3dR9RvnjiOh2tiN-wH7Ee3osB05huFsOLsPEqmPYA8F5Z5c=w320-h180-rw" alt="Movies Icon" width="80" height="80"></div>
-        <div class="content">
-            <h2>OTV TV V3.2 </h2>
-            <p>بدون كود تفعيل  </p>
-            <a href="https://download2391.mediafire.com/2ap8zkj6qalge9ui7wQmFZekc1fTn7dDBuZ_3AnqeZ83xeGNfqM3L38uiIGGgGWsXKaJbvy2M1W5q6R_m7QvPuc_uWP9apsDwpVfp7cHL7ve6S9Nq9WeL8Qxxqwl30Dt2u46b6qb_59lyX_tNaseei75w5pCmYlBMlMz__ZajHRb2w/01vdy97j803ofzg/OTF+TV+V3.2.apk" class="btn" onclick="increaseDownload('iptv')" target="_blank">
-            تحميل 
-        </a>
-        
-        <div class="counter">
-            عدد التحميلات: <span id="iptv-count">0</span>
-        </div>
-    </div>
-</div>
-<script>
-function increaseDownload(app){
-
-    let count = localStorage.getItem(app);
-
-    if(!count){
-        count = 0;
-    }
-
-    count++;
-    localStorage.setItem(app, count);
-
-    document.getElementById(app + "-count").innerText = count;
-}
-
-window.onload = function(){
-
-    let apps = ["iptv","movies","browser"];
-
-    apps.forEach(function(app){
-        let saved = localStorage.getItem(app);
-        if(saved){
-            document.getElementById(app + "-count").innerText = saved;
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --neon-green: #00ff88;
+            --neon-cyan: #00d2ff;
+            --dark-bg: #0f172a;
         }
-    });
-}
-</script>
 
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Glow Effects */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+
+        body::before {
+            background: rgba(0, 255, 136, 0.15);
+            top: -10%;
+            left: -10%;
+        }
+
+        body::after {
+            background: rgba(0, 210, 255, 0.15);
+            bottom: -10%;
+            right: -10%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 30px); }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(0, 255, 136, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 255, 136, 0.2), 
+                        inset 0 0 15px rgba(0, 255, 136, 0.05);
+        }
+
+        .glass-card:hover .app-icon {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+        }
+
+        /* Icon Styling */
+        .app-icon {
+            transition: all 0.4s ease;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Neon Glow Text */
+        .neon-text-green {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.7), 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+        
+        .neon-text-cyan {
+            color: var(--neon-cyan);
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #00ff88 0%, #00b35f 100%);
+            color: #000;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-download::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.6);
+        }
+
+        .btn-download:hover::after {
+            left: 100%;
+        }
+
+        .counter-badge {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            color: var(--neon-green);
+        }
+
+        /* App Grid Layout */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body class="antialiased pb-20">
+
+    <div class="container mx-auto px-4 max-w-6xl pt-16 pb-12">
+        <header class="text-center mb-16 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight text-white">
+                محمد <span class="neon-text-green inline-block">إسلام</span> Google Tv
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 font-semibold flex items-center justify-center gap-3">
+                <i class="fa-brands fa-android text-green-500"></i>
+                تطبيقات Google tv Android tv
+                <i class="fa-solid fa-tv text-gray-300"></i>
+            </p>
+        </header>
+
+        <main class="app-grid z-10 relative">
+
+            <!-- Yacine TV -->
+            <article class="glass-card flex flex-col p-6 h-full relative overflow-hidden group">
+                <div class="flex items-start gap-5 mb-4">
+                    <img src="https://www.journaldugeek.com/resize/w112/O7ojly410dVNKUzG491uuSzQCyPRRqm99RsCuq2F.png" alt="Yacine TV" class="app-icon w-20 h-20 object-cover flex-shrink-0 bg-white">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-bold text-white mb-1">Yacine TV</h2>
+                        <p class="text-gray-400 text-sm leading-relaxed">أفضل تطبيق لمشاهدة القنوات بجودة عالية</p>
+                    </div>
+                </div>
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                    <a href="https://www.mediafire.com/file/ledsvueu7zxrame/com.ytv.player_14.0.xapk/file" 
+                       class="btn-download px-6 py-2.5 rounded-xl flex items-center gap-2" 
+                       onclick="increaseDownload('yacine')" target="_blank">
+                        <i class="fa-solid fa-cloud-arrow-down"></i> تحميل
+                    </a>
+                    <div class="counter-badge px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span id="yacine-count">0</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- YTV Pro -->
+            <article class="glass-card flex flex-col p-6 h-full relative overflow-hidden group">
+                <div class="flex items-start gap-5 mb-4">
+                    <img src="https://iili.io/qKaJiJV.jpg" alt="YTV Pro" class="app-icon w-20 h-20 object-cover flex-shrink-0 bg-gray-800">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-bold text-white mb-1">YTV Pro</h2>
+                        <p class="text-gray-400 text-sm leading-relaxed">مشغل تطبيق ياسين tv</p>
+                    </div>
+                </div>
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                    <a href="https://www.mediafire.com/file/ks1fuwgci0n4rnk/مشغل+YTV.apk/file" 
+                       class="btn-download px-6 py-2.5 rounded-xl flex items-center gap-2" 
+                       onclick="increaseDownload('ytv')" target="_blank">
+                        <i class="fa-solid fa-cloud-arrow-down"></i> تحميل
+                    </a>
+                    <div class="counter-badge px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span id="ytv-count">0</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- General TV Pro -->
+            <article class="glass-card flex flex-col p-6 h-full relative overflow-hidden group">
+                <div class="flex items-start gap-5 mb-4">
+                    <img src="https://i.ibb.co/xS2jH68y/genral-tv-icon.png" alt="General tv pro" class="app-icon w-20 h-20 object-cover flex-shrink-0 bg-gray-800">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-bold text-white mb-1">General tv pro</h2>
+                        <p class="text-gray-400 text-sm leading-relaxed">كود التفعيل: <span class="neon-text-cyan font-bold">000</span></p>
+                    </div>
+                </div>
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                    <a href="https://gofile.io/d/XJydW8" 
+                       class="btn-download px-6 py-2.5 rounded-xl flex items-center gap-2" 
+                       onclick="increaseDownload('general')" target="_blank">
+                        <i class="fa-solid fa-cloud-arrow-down"></i> تحميل
+                    </a>
+                    <div class="counter-badge px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span id="general-count">0</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PrimeTv -->
+            <article class="glass-card flex flex-col p-6 h-full relative overflow-hidden group">
+                <div class="flex items-start gap-5 mb-4">
+                    <img src="https://i.ibb.co/N6Dfnkmc/Screenshot-2026-02-23-144017.png" alt="PrimeTv V1.4.0" class="app-icon w-20 h-20 object-cover flex-shrink-0 bg-gray-800">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-bold text-white mb-1">PrimeTv V1.4.0</h2>
+                        <p class="text-gray-400 text-sm leading-relaxed">كود التفعيل: <span class="neon-text-cyan font-bold">2026</span></p>
+                    </div>
+                </div>
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                    <a href="https://www.mediafire.com/file/wtpzbx8wta6zn3z/PrimeTV+v1.4.0.apk/file" 
+                       class="btn-download px-6 py-2.5 rounded-xl flex items-center gap-2" 
+                       onclick="increaseDownload('prime')" target="_blank">
+                        <i class="fa-solid fa-cloud-arrow-down"></i> تحميل
+                    </a>
+                    <div class="counter-badge px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span id="prime-count">0</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Cricfy TV -->
+            <article class="glass-card flex flex-col p-6 h-full relative overflow-hidden group">
+                <div class="flex items-start gap-5 mb-4">
+                    <img src="https://cricfy.net/wp-content/uploads/crcify-tv-pc-apk.webp" alt="Cricfy TV V6.1" class="app-icon w-20 h-20 object-cover flex-shrink-0 bg-white">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-bold text-white mb-1">Cricfy TV V6.1</h2>
+                        <p class="text-gray-400 text-sm leading-relaxed">بدون كود تفعيل</p>
+                    </div>
+                </div>
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                    <a href="https://www.mediafire.com/file/sjkb8d4j3mgegyt/CRICFy_v6.1_2.apk/file" 
+                       class="btn-download px-6 py-2.5 rounded-xl flex items-center gap-2" 
+                       onclick="increaseDownload('cricfy')" target="_blank">
+                        <i class="fa-solid fa-cloud-arrow-down"></i> تحميل
+                    </a>
+                    <div class="counter-badge px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span id="cricfy-count">0</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- OTV TV -->
+            <article class="glass-card flex flex-col p-6 h-full relative overflow-hidden group">
+                <div class="flex items-start gap-5 mb-4">
+                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgurg7NMQpkYfWSFdmeve4T-pWEd35DqAFmp80BZVG61AkQGsq4Lv4R0X3BuT3BW9TlBiWq_HK1h7OokXgOVB2vrftC4rYo8K7TBwmrDfN5Ti_nxuoyXA8gJ16HEspvaePdrrZlFgKlJW3d3dR9RvnjiOh2tiN-wH7Ee3osB05huFsOLsPEqmPYA8F5Z5c=w320-h180-rw" alt="OTV TV V3.2" class="app-icon w-20 h-20 object-cover flex-shrink-0 bg-gray-800">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-bold text-white mb-1">OTV TV V3.2</h2>
+                        <p class="text-gray-400 text-sm leading-relaxed">بدون كود تفعيل</p>
+                    </div>
+                </div>
+                <div class="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                    <a href="https://download2391.mediafire.com/2ap8zkj6qalge9ui7wQmFZekc1fTn7dDBuZ_3AnqeZ83xeGNfqM3L38uiIGGgGWsXKaJbvy2M1W5q6R_m7QvPuc_uWP9apsDwpVfp7cHL7ve6S9Nq9WeL8Qxxqwl30Dt2u46b6qb_59lyX_tNaseei75w5pCmYlBMlMz__ZajHRb2w/01vdy97j803ofzg/OTF+TV+V3.2.apk" 
+                       class="btn-download px-6 py-2.5 rounded-xl flex items-center gap-2" 
+                       onclick="increaseDownload('otv')" target="_blank">
+                        <i class="fa-solid fa-cloud-arrow-down"></i> تحميل
+                    </a>
+                    <div class="counter-badge px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span id="otv-count">0</span>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+    </div>
+
+    <script>
+        // Array of unique App IDs to iterate through
+        const appIds = ['yacine', 'ytv', 'general', 'prime', 'cricfy', 'otv'];
+
+        /**
+         * Function to initialize counters on page load
+         */
+        function initCounters() {
+            appIds.forEach(appId => {
+                let savedCount = localStorage.getItem(appId);
+                if (savedCount) {
+                    const counterElement = document.getElementById(appId + '-count');
+                    if(counterElement) {
+                        counterElement.innerText = savedCount;
+                    }
+                }
+            });
+        }
+
+        /**
+         * Function to increment download count for a specific app
+         * @param {string} appId - The unique ID of the application
+         */
+        function increaseDownload(appId) {
+            // Get current count, default to 0 if not set
+            let count = parseInt(localStorage.getItem(appId)) || 0;
+            
+            // Increment
+            count++;
+            
+            // Save back to localStorage
+            localStorage.setItem(appId, count);
+            
+            // Update the DOM for this specific app
+            const counterElement = document.getElementById(appId + '-count');
+            if(counterElement) {
+                // Add a small bounce animation effect on click
+                counterElement.innerText = count;
+                counterElement.parentElement.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    counterElement.parentElement.style.transform = 'scale(1)';
+                    counterElement.parentElement.style.transition = 'transform 0.3s ease';
+                }, 150);
+            }
+        }
+
+        // Run initialization when window loads
+        window.onload = initCounters;
+    </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
